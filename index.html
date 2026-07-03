@@ -30,6 +30,79 @@ input,textarea{font-family:inherit;}
 .sp{width:36px;height:36px;border:2px solid #1F7A55;border-top-color:#3DDC97;border-radius:50%;animation:spin 0.8s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.25}}
+@keyframes sheen{to{background-position:200% center}}
+@keyframes drawL{to{stroke-dashoffset:0}}
+@keyframes fadeIn{to{opacity:1}}
+@keyframes pageIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(34px,-24px) scale(1.12)}}
+@keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-28px,18px) scale(1.08)}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@keyframes ctaGlow{0%,100%{box-shadow:0 4px 14px rgba(61,220,151,0.18)}50%{box-shadow:0 6px 30px rgba(61,220,151,0.42)}}
+main>div{animation:pageIn 0.95s cubic-bezier(0.22,0.61,0.36,1) both}
+.fu{opacity:0;animation:fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) forwards}
+.fu1{animation-delay:0.05s}.fu2{animation-delay:0.15s}.fu3{animation-delay:0.28s}.fu4{animation-delay:0.4s}.fu5{animation-delay:0.52s}
+.hero-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(640px 340px at 78% 8%,rgba(61,220,151,0.13),transparent 60%),radial-gradient(520px 320px at 8% 90%,rgba(91,159,232,0.07),transparent 60%)}
+.hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(237,234,224,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(237,234,224,0.035) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(720px 480px at 62% 0%,#000 25%,transparent 75%);mask-image:radial-gradient(720px 480px at 62% 0%,#000 25%,transparent 75%)}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+.grad-text{background:linear-gradient(100deg,#EDEAE0 20%,#3DDC97 45%,#7FE9BC 55%,#EDEAE0 80%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 5s linear infinite}
+.cta-main{transition:transform 0.2s;animation:ctaGlow 3.2s ease-in-out infinite}
+.cta-main:hover{transform:translateY(-2px) scale(1.02)}
+.cta-sec:hover{border-color:rgba(61,220,151,0.5)!important;color:#EDEAE0!important}
+.tape{display:flex;gap:38px;width:max-content;animation:marquee 30s linear infinite}
+.tape:hover{animation-play-state:paused}
+.mod-card{transition:transform 0.25s,border-color 0.25s,box-shadow 0.25s,background 0.25s;cursor:pointer}
+.mod-card:hover{transform:translateY(-5px);border-color:rgba(61,220,151,0.45)!important;background:#1A222C!important;box-shadow:0 16px 36px rgba(0,0,0,0.45)}
+.mod-go{opacity:0;transform:translateX(-6px);transition:opacity 0.25s,transform 0.25s}
+.mod-card:hover .mod-go{opacity:1;transform:translateX(0)}
+.mod-ico{display:inline-block;transition:transform 0.25s}
+.mod-card:hover .mod-ico{transform:scale(1.25) rotate(-8deg)}
+#mods-grid>div{opacity:0;animation:fadeUp 0.6s cubic-bezier(0.16,1,0.3,1) forwards}
+#mods-grid>div:nth-child(1){animation-delay:0.05s}#mods-grid>div:nth-child(2){animation-delay:0.12s}#mods-grid>div:nth-child(3){animation-delay:0.19s}#mods-grid>div:nth-child(4){animation-delay:0.26s}#mods-grid>div:nth-child(5){animation-delay:0.33s}#mods-grid>div:nth-child(6){animation-delay:0.4s}#mods-grid>div:nth-child(7){animation-delay:0.47s}#mods-grid>div:nth-child(8){animation-delay:0.54s}
+.spark-line{stroke-dasharray:520;stroke-dashoffset:520;animation:drawL 2s ease 0.6s forwards}
+.spark-area{opacity:0;animation:fadeIn 1s ease 1.8s forwards}
+.spark-dot{opacity:0;animation:fadeIn 0.4s ease 2.4s forwards}
+@media (prefers-reduced-motion:reduce){.fu,.grad-text,.spark-line,.spark-area,.spark-dot,.tape,.orb,.cta-main,main>div,#mods-grid>div{animation:none!important;opacity:1!important;stroke-dashoffset:0!important;transform:none!important}}
+
+main>div:not(.home-root)>div{opacity:0;animation:fadeUp 0.55s cubic-bezier(0.16,1,0.3,1) forwards}
+main>div:not(.home-root)>div:nth-child(1){animation-delay:0.04s}
+main>div:not(.home-root)>div:nth-child(2){animation-delay:0.1s}
+main>div:not(.home-root)>div:nth-child(3){animation-delay:0.16s}
+main>div:not(.home-root)>div:nth-child(4){animation-delay:0.22s}
+main>div:not(.home-root)>div:nth-child(5){animation-delay:0.28s}
+main>div:not(.home-root)>div:nth-child(6){animation-delay:0.34s}
+main>div:not(.home-root)>div:nth-child(7){animation-delay:0.4s}
+main>div:not(.home-root)>div:nth-child(8){animation-delay:0.46s}
+main button{transition:transform 0.15s,box-shadow 0.15s,background 0.15s,color 0.15s,border-color 0.15s}
+main button:hover{transform:translateY(-1px)}
+main input{transition:box-shadow 0.2s,border-color 0.2s}
+main input:focus{box-shadow:0 0 0 3px rgba(61,220,151,0.18)}
+main div[style*="cursor"]{transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s}
+main div[style*="cursor"]:hover{transform:translateY(-2px)}
+@media (prefers-reduced-motion:reduce){main>div:not(.home-root)>div,main button,main input,main div[style*="cursor"]{animation:none!important;opacity:1!important;transform:none!important;transition:none!important}}
+
+.step-card{transition:transform 0.25s,border-color 0.25s,box-shadow 0.25s;cursor:pointer}
+.step-card:hover{transform:translateY(-4px);border-color:rgba(61,220,151,0.4)!important;box-shadow:0 14px 30px rgba(0,0,0,0.4)}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:20px;border:1px solid #2A3038;background:rgba(22,27,34,0.6);font-size:12.5px;color:#9CA3AF}
+.flink{transition:color 0.15s}
+.flink:hover{color:#3DDC97!important}
+header{box-shadow:0 1px 0 rgba(61,220,151,0.08)}
+
+.fx-sweep{position:fixed;inset:0;z-index:100;pointer-events:none;overflow:hidden}
+.fx-sweep::before{content:'';position:absolute;left:50%;top:50%;width:30vmax;height:30vmax;margin:-15vmax 0 0 -15vmax;border-radius:50%;background:radial-gradient(circle,rgba(61,220,151,0.06),transparent 65%);opacity:0;animation:glowP 2s ease forwards}
+@keyframes glowP{25%{opacity:1}100%{opacity:0;transform:scale(1.8)}}
+.fx-sweep span{position:absolute;left:50%;top:50%;filter:blur(48px);opacity:0;will-change:transform,opacity}
+.fx-sweep span:nth-child(1){width:46vmax;height:38vmax;margin:-19vmax 0 0 -23vmax;background:radial-gradient(closest-side,rgba(61,220,151,0.16),rgba(61,220,151,0.05) 55%,transparent 75%);border-radius:44% 56% 58% 42%/52% 44% 56% 48%;animation:ink1 2.1s ease-out forwards}
+.fx-sweep span:nth-child(2){width:42vmax;height:34vmax;margin:-15vmax 0 0 -26vmax;background:radial-gradient(closest-side,rgba(127,233,188,0.10),transparent 70%);border-radius:58% 42% 46% 54%/46% 58% 42% 54%;animation:ink2 2.35s ease-out 0.15s forwards}
+.fx-sweep span:nth-child(3){width:40vmax;height:36vmax;margin:-20vmax 0 0 -17vmax;background:radial-gradient(closest-side,rgba(43,168,120,0.12),transparent 68%);border-radius:52% 48% 60% 40%/58% 46% 54% 42%;animation:ink3 2.25s ease-out 0.3s forwards}
+@keyframes ink1{0%{transform:scale(0.2) rotate(0deg)}18%{opacity:1}100%{transform:scale(1.5) rotate(14deg);opacity:0}}
+@keyframes ink2{0%{transform:scale(0.25) rotate(0deg)}20%{opacity:1}100%{transform:scale(1.7) rotate(-18deg);opacity:0}}
+@keyframes ink3{0%{transform:scale(0.15) rotate(0deg)}22%{opacity:1}100%{transform:scale(1.6) rotate(10deg);opacity:0}}
+.home-root::after{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(560px at var(--mx,50%) var(--my,30%),rgba(61,220,151,0.095),rgba(91,159,232,0.03) 45%,transparent 68%)}
+@media (prefers-reduced-motion:reduce){.fx-sweep::before,.fx-sweep::after,.fx-sweep span{animation:none!important;opacity:0!important}}
 </style>
 </head>
 <body>
@@ -650,9 +723,9 @@ function Logo(){
 function ModHeader({eyebrow,title,body}){
   return(
     <div style={{marginBottom:32}}>
-      <p className="mono" style={{fontSize:11.5,color:C.mint,letterSpacing:'0.1em',textTransform:'uppercase',marginBottom:10}}>{eyebrow}</p>
-      <h2 className="serif" style={{fontSize:32,fontWeight:500,margin:'0 0 12px',letterSpacing:'-0.01em'}}>{title}</h2>
-      <p style={{fontSize:15,color:C.td,lineHeight:1.65,maxWidth:620}}>{body}</p>
+      <p className="mono fu fu1" style={{display:'flex',alignItems:'center',gap:8,fontSize:11.5,color:C.mint,letterSpacing:'0.1em',textTransform:'uppercase',marginBottom:10}}><span style={{width:6,height:6,borderRadius:'50%',background:C.mint,display:'inline-block',animation:'blink 2.4s infinite'}}></span>{eyebrow}</p>
+      <h2 className="serif fu fu2" style={{fontSize:32,fontWeight:500,margin:'0 0 12px',letterSpacing:'-0.01em'}}>{title}</h2>
+      <p className="fu fu3" style={{fontSize:15,color:C.td,lineHeight:1.65,maxWidth:620}}>{body}</p>
     </div>
   );
 }
@@ -681,29 +754,121 @@ function AllocBar({alloc}){
 // ─── MODULE 1: QUIZ ───────────────────────────────────────────────────────────
 
 function Home({t,goTo}){
+  const modIds=['quiz','explorer','glossary','checklist','risk','calc','portafolio','simulador'];
+  const modIcons=['📊','🔍','📖','✅','🛡️','🧮','📋','📈'];
+  const tape=['Diversificación','P/E Ratio','Beta','Dividendos','ETFs','Volatilidad','Interés compuesto','Riesgo vs retorno','Dollar-Cost Averaging','Horizonte de inversión'];
+  const words=(t.heroTitle||'').split(' ');
+  const cut=Math.max(words.length-2,0);
+  const head=words.slice(0,cut).join(' ');
+  const tail=words.slice(cut).join(' ');
   return(
-    <div style={{maxWidth:1100,margin:'0 auto',padding:'64px 20px'}}>
-      <div style={{maxWidth:660}}>
-        <p className="mono" style={{fontSize:12,color:C.mint,letterSpacing:'0.1em',textTransform:'uppercase',marginBottom:16}}>{t.heroEyebrow}</p>
-        <h1 className="serif" style={{fontSize:48,fontWeight:500,lineHeight:1.12,letterSpacing:'-0.01em',margin:'0 0 20px'}}>{t.heroTitle}</h1>
-        <p style={{fontSize:18,color:C.td,lineHeight:1.65,marginBottom:36}}>{t.heroBody}</p>
-        <button onClick={()=>goTo('quiz')} style={{display:'inline-flex',alignItems:'center',gap:10,padding:'14px 24px',borderRadius:12,border:'none',background:C.mint,color:'#051A0F',fontSize:15,fontWeight:700,cursor:'pointer'}}>
-          {t.heroCta} <span style={{fontSize:18}}>→</span>
-        </button>
-      </div>
-      <div style={{marginTop:56,padding:'24px 28px',borderRadius:16,background:C.s,border:`1px solid ${C.line}`,borderLeft:`4px solid ${C.mint}`}}>
-        <h3 className="serif" style={{fontSize:18,fontWeight:500,margin:'0 0 10px'}}>{t.principleTitle}</h3>
-        <p style={{fontSize:14.5,color:C.td,lineHeight:1.65,margin:0}}>{t.principleBody}</p>
-      </div>
-      <h2 className="serif" style={{fontSize:24,fontWeight:500,margin:'64px 0 24px'}}>Los 8 módulos</h2>
-      <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(250px,1fr))',gap:14}}>
-        {t.mods.map(m=>(
-          <div key={m.n} style={{padding:'22px 24px',borderRadius:14,background:C.s,border:`1px solid ${C.line}`}}>
-            <span className="mono" style={{fontSize:12,color:C.tf}}>{m.n}</span>
-            <h4 className="serif" style={{fontSize:17,fontWeight:500,margin:'8px 0 10px'}}>{m.t}</h4>
-            <p style={{fontSize:14,color:C.td,lineHeight:1.55,margin:0}}>{m.d}</p>
+    <div className="home-root" onMouseMove={function(e){var r=e.currentTarget;var b=r.getBoundingClientRect();r.style.setProperty('--mx',(e.clientX-b.left)+'px');r.style.setProperty('--my',(e.clientY-b.top)+'px');}} style={{position:'relative',overflow:'hidden'}}>
+      <div className="hero-bg"></div>
+      <div className="hero-grid"></div>
+      <div className="orb" style={{width:360,height:360,background:'rgba(61,220,151,0.13)',top:-100,right:'6%',animation:'drift 12s ease-in-out infinite'}}></div>
+      <div className="orb" style={{width:300,height:300,background:'rgba(91,159,232,0.10)',bottom:'14%',left:-60,animation:'drift2 14s ease-in-out infinite'}}></div>
+      <div style={{maxWidth:1100,margin:'0 auto',padding:'84px 20px 72px',position:'relative'}}>
+        <div style={{display:'flex',flexWrap:'wrap',alignItems:'center',gap:48}}>
+          <div style={{flex:'1 1 440px',minWidth:300}}>
+            <p className="mono fu fu1" style={{display:'flex',alignItems:'center',gap:9,fontSize:12,color:C.mint,letterSpacing:'0.12em',textTransform:'uppercase',marginBottom:18}}>
+              <span style={{width:7,height:7,borderRadius:'50%',background:C.mint,display:'inline-block',animation:'blink 2.4s infinite'}}></span>
+              {t.heroEyebrow}
+            </p>
+            <h1 className="serif fu fu2" style={{fontSize:'clamp(40px,6vw,62px)',fontWeight:500,lineHeight:1.08,letterSpacing:'-0.018em',margin:'0 0 24px'}}>
+              {head} <span className="grad-text">{tail}</span>
+            </h1>
+            <p className="fu fu3" style={{fontSize:18,color:C.td,lineHeight:1.7,marginBottom:34,maxWidth:520}}>{t.heroBody}</p>
+            <div className="fu fu4" style={{display:'flex',gap:14,flexWrap:'wrap',alignItems:'center'}}>
+              <button className="cta-main" onClick={()=>goTo('quiz')} style={{display:'inline-flex',alignItems:'center',gap:10,padding:'15px 26px',borderRadius:12,border:'none',background:C.mint,color:'#051A0F',fontSize:15,fontWeight:700,cursor:'pointer'}}>
+                {t.heroCta} <span style={{fontSize:18}}>→</span>
+              </button>
+              <button className="cta-sec" onClick={()=>{var el=document.getElementById('mods-grid');if(el)el.scrollIntoView({behavior:'smooth'});}} style={{display:'inline-flex',alignItems:'center',gap:8,padding:'14px 22px',borderRadius:12,border:'1px solid '+C.line,background:'transparent',color:C.td,fontSize:15,fontWeight:600,cursor:'pointer'}}>
+                Los 8 módulos <span style={{fontSize:16}}>↓</span>
+              </button>
+            </div>
+            <div className="fu fu5" style={{display:'flex',gap:10,marginTop:20,flexWrap:'wrap'}}>
+              <span className="chip">⚡ Datos en vivo</span>
+              <span className="chip">🔓 Gratis, sin registro</span>
+              <span className="chip">🚫 Cero recomendaciones de compra</span>
+            </div>
+            <div className="fu fu5" style={{display:'flex',gap:28,marginTop:36,flexWrap:'wrap'}}>
+              {[['8','módulos'],['ES·EN','bilingüe'],['100%','educativo'],['0','vendedores']].map(function(x){return(
+                <div key={x[1]}>
+                  <div className="mono" style={{fontSize:20,fontWeight:700,color:C.t}}>{x[0]}</div>
+                  <div style={{fontSize:11.5,color:C.tf,textTransform:'uppercase',letterSpacing:'0.08em',marginTop:2}}>{x[1]}</div>
+                </div>);})}
+            </div>
           </div>
-        ))}
+          <div className="fu fu3" style={{flex:'1 1 300px',minWidth:280,maxWidth:440}}>
+            <div style={{borderRadius:20,border:'1px solid '+C.line,background:'linear-gradient(165deg,#171D26,#10151C)',padding:'20px 20px 12px',boxShadow:'0 30px 70px rgba(0,0,0,0.45)',animation:'floaty 7s ease-in-out infinite'}}>
+              <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:10}}>
+                <span className="mono" style={{fontSize:11.5,color:C.tf,letterSpacing:'0.08em',textTransform:'uppercase'}}>Tu curva de aprendizaje</span>
+                <span className="mono" style={{fontSize:11.5,color:C.mint,background:'rgba(61,220,151,0.1)',border:'1px solid rgba(61,220,151,0.25)',padding:'3px 8px',borderRadius:20}}>▲ en curso</span>
+              </div>
+              <svg viewBox="0 0 360 150" style={{width:'100%',display:'block'}}>
+                <defs>
+                  <linearGradient id="gfill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stopColor="#3DDC97" stopOpacity="0.22"/>
+                    <stop offset="1" stopColor="#3DDC97" stopOpacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0,125 C40,118 60,96 90,100 C120,104 145,72 180,76 C215,80 240,48 280,42 C310,37 340,26 360,18 L360,150 L0,150 Z" fill="url(#gfill)" className="spark-area"/>
+                <path className="spark-line" d="M0,125 C40,118 60,96 90,100 C120,104 145,72 180,76 C215,80 240,48 280,42 C310,37 340,26 360,18" fill="none" stroke="#3DDC97" strokeWidth="2.5" strokeLinecap="round"/>
+                <circle cx="360" cy="18" r="4" fill="#3DDC97" className="spark-dot"/>
+              </svg>
+              <div style={{display:'flex',justifyContent:'space-between',padding:'10px 2px 6px',borderTop:'1px solid '+C.line,marginTop:8}}>
+                <span className="mono" style={{fontSize:11,color:C.tf}}>conceptos</span>
+                <span className="mono" style={{fontSize:11,color:C.tf}}>métricas</span>
+                <span className="mono" style={{fontSize:11,color:C.tf}}>decisiones</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="fu fu5" style={{marginTop:60,overflow:'hidden',WebkitMaskImage:'linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)',maskImage:'linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)'}}>
+          <div className="tape mono" style={{fontSize:12.5,color:C.tf}}>
+            {tape.concat(tape).map(function(c,i){return(
+              <span key={i} style={{display:'inline-flex',alignItems:'center',gap:10,whiteSpace:'nowrap'}}>
+                <span style={{color:C.mint,fontSize:9}}>◆</span>{c}
+              </span>);})}
+          </div>
+        </div>
+        <div style={{marginTop:76}}>
+          <p className="mono" style={{fontSize:11,color:C.mint,letterSpacing:'0.12em',textTransform:'uppercase',margin:'0 0 8px'}}>Empieza aquí</p>
+          <h2 className="serif" style={{fontSize:28,fontWeight:500,margin:'0 0 6px'}}>Cómo funciona</h2>
+          <p style={{fontSize:14.5,color:C.tf,margin:'0 0 28px'}}>Tres pasos, cero presión.</p>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))',gap:14}}>
+            {[['01','🧭','Descubre tu perfil','Un cuestionario honesto te ubica en una categoría de riesgo — sin venderte nada.','quiz'],
+              ['02','🔍','Explora con datos reales','Métricas en vivo de cualquier acción o ETF, explicadas para que las entiendas.','explorer'],
+              ['03','📈','Practica sin riesgo','Simula con capital virtual y precios reales hasta que decidas con confianza.','simulador']].map(function(st){return(
+              <div key={st[0]} className="step-card" onClick={function(){goTo(st[4]);}} style={{padding:'26px 24px',borderRadius:16,background:'rgba(22,27,34,0.7)',border:'1px solid '+C.line,position:'relative',overflow:'hidden'}}>
+                <span className="mono" style={{position:'absolute',top:-16,right:10,fontSize:68,fontWeight:700,color:'rgba(61,220,151,0.07)',pointerEvents:'none'}}>{st[0]}</span>
+                <div style={{fontSize:26,marginBottom:14}}>{st[1]}</div>
+                <h4 className="serif" style={{fontSize:17.5,fontWeight:500,margin:'0 0 10px'}}>{st[2]}</h4>
+                <p style={{fontSize:14,color:C.td,lineHeight:1.6,margin:0}}>{st[3]}</p>
+              </div>);})}
+          </div>
+        </div>
+        <div className="fu fu5" style={{marginTop:64,padding:'26px 30px',borderRadius:18,background:'linear-gradient(135deg,rgba(61,220,151,0.07),rgba(22,27,34,0.92))',border:'1px solid rgba(61,220,151,0.22)'}}>
+          <h3 className="serif" style={{fontSize:19,fontWeight:500,margin:'0 0 10px',display:'flex',alignItems:'center',gap:10}}><span style={{fontSize:20}}>🧭</span>{t.principleTitle}</h3>
+          <p style={{fontSize:14.5,color:C.td,lineHeight:1.7,margin:0}}>{t.principleBody}</p>
+        </div>
+        <div style={{marginTop:76}}>
+          <p className="mono" style={{fontSize:11,color:C.mint,letterSpacing:'0.12em',textTransform:'uppercase',margin:'0 0 8px'}}>Todo el contenido</p>
+          <h2 className="serif" style={{fontSize:28,fontWeight:500,margin:'0 0 8px'}}>Los 8 módulos</h2>
+          <p style={{fontSize:14.5,color:C.tf,margin:'0 0 26px'}}>Haz clic en cualquiera para entrar.</p>
+          <div id="mods-grid" style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(250px,1fr))',gap:14,scrollMarginTop:'90px'}}>
+            {t.mods.map(function(m,i){return(
+              <div key={m.n} className="mod-card" onClick={function(){goTo(modIds[i]);}} style={{padding:'22px 24px',borderRadius:16,background:C.s,border:'1px solid '+C.line,position:'relative'}}>
+                <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
+                  <span className="mono" style={{fontSize:12,color:C.tf}}>{m.n}</span>
+                  <span className="mod-ico" style={{fontSize:18,opacity:0.9}}>{modIcons[i]}</span>
+                </div>
+                <h4 className="serif" style={{fontSize:17,fontWeight:500,margin:'10px 0 10px'}}>{m.t}</h4>
+                <p style={{fontSize:14,color:C.td,lineHeight:1.55,margin:0}}>{m.d}</p>
+                <span className="mod-go mono" style={{display:'inline-block',marginTop:14,fontSize:12.5,color:C.mint}}>Entrar →</span>
+              </div>);})}
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -2369,6 +2534,8 @@ function App(){
   const [page,setPage]=useState('home');
   const [pendingTicker,setPendingTicker]=useState('');
   const t=STR[lang];
+  const [fx,setFx]=useState(false);
+  const nav2=function(id){ if(id===page){return;} setFx(true); setTimeout(function(){ setPage(id); window.scrollTo({top:0}); },750); setTimeout(function(){ setFx(false); },2650); };
 
   useEffect(()=>{
     const ls=document.getElementById('ls');
@@ -2389,15 +2556,16 @@ function App(){
 
   return(
     <div style={{minHeight:'100vh',background:C.bg,color:C.t}}>
+      {fx && <div className="fx-sweep"><span></span><span></span><span></span></div>}
       <header style={{borderBottom:`1px solid ${C.line}`,position:'sticky',top:0,background:'rgba(14,17,23,0.95)',backdropFilter:'blur(10px)',zIndex:40}}>
         <div style={{maxWidth:1100,margin:'0 auto',padding:'12px 20px',display:'flex',alignItems:'center',gap:12}}>
-          <div onClick={()=>setPage('home')} style={{cursor:'pointer',display:'flex',alignItems:'center',gap:10,flexShrink:0,marginRight:8}}>
+          <div onClick={()=>nav2('home')} style={{cursor:'pointer',display:'flex',alignItems:'center',gap:10,flexShrink:0,marginRight:8}}>
             <Logo/>
             <span className="serif" style={{fontSize:18,fontWeight:500}}>{t.appName}</span>
           </div>
           <nav style={{display:'flex',gap:2,overflowX:'auto',flex:1}}>
             {nav.map(item=>(
-              <button key={item.id} onClick={()=>setPage(item.id)} style={{display:'flex',alignItems:'center',gap:5,padding:'7px 10px',borderRadius:8,border:'none',background:page===item.id?C.s2:'transparent',color:page===item.id?C.mint:C.td,fontSize:12.5,fontWeight:500,whiteSpace:'nowrap',cursor:'pointer'}}>
+              <button key={item.id} onClick={()=>nav2(item.id)} style={{display:'flex',alignItems:'center',gap:5,padding:'7px 10px',borderRadius:8,border:'none',background:page===item.id?C.s2:'transparent',color:page===item.id?C.mint:C.td,fontSize:12.5,fontWeight:500,whiteSpace:'nowrap',cursor:'pointer'}}>
                 <span style={{fontSize:13}}>{item.e}</span> {item.l}
               </button>
             ))}
@@ -2408,9 +2576,9 @@ function App(){
         </div>
       </header>
       <main>
-        {page==='home'&&<Home t={t} goTo={setPage}/>}
-        {page==='quiz'&&<Quiz goTo={setPage}/>}
-        {page==='explorer'&&<Explorer goTo={setPage} onAnalyze={setPendingTicker}/>}
+        {page==='home'&&<Home t={t} goTo={nav2}/>}
+        {page==='quiz'&&<Quiz goTo={nav2}/>}
+        {page==='explorer'&&<Explorer goTo={nav2} onAnalyze={setPendingTicker}/>}
         {page==='glossary'&&<Glossary/>}
         {page==='checklist'&&<Checklist autoTicker={pendingTicker} clearAuto={()=>setPendingTicker('')}/>}
         {page==='risk'&&<RiskCenter/>}
@@ -2418,10 +2586,35 @@ function App(){
         {page==='portafolio'&&<Watchlist/>}
         {page==='simulador'&&<Simulator/>}
       </main>
-      <footer style={{borderTop:`1px solid ${C.line}`,marginTop:80}}>
-        <div style={{maxWidth:1100,margin:'0 auto',padding:'24px 20px',display:'flex',gap:12,alignItems:'flex-start'}}>
-          <span style={{fontSize:16,flexShrink:0}}>🛡️</span>
-          <p style={{fontSize:12.5,color:C.tf,lineHeight:1.6,margin:0}}>{t.disclaimer}</p>
+      <footer style={{borderTop:'1px solid '+C.line,marginTop:80,background:'linear-gradient(180deg,transparent,rgba(61,220,151,0.03))'}}>
+        <div style={{maxWidth:1100,margin:'0 auto',padding:'48px 20px 20px'}}>
+          <div style={{display:'flex',flexWrap:'wrap',gap:40,justifyContent:'space-between',paddingBottom:36,borderBottom:'1px solid '+C.line}}>
+            <div style={{maxWidth:300}}>
+              <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:12}}><Logo/><span className="serif" style={{fontSize:18,fontWeight:500}}>{t.appName}</span></div>
+              <p style={{fontSize:13.5,color:C.tf,lineHeight:1.65,margin:0}}>Educación financiera con datos reales. Aprende, explora y practica — sin que nadie te diga qué comprar.</p>
+            </div>
+            <div>
+              <p className="mono" style={{fontSize:11,color:C.tf,textTransform:'uppercase',letterSpacing:'0.1em',marginBottom:12}}>Aprende</p>
+              {[['quiz','Perfil de riesgo'],['glossary','Glosario'],['checklist','Checklist'],['risk','Centro de riesgo']].map(function(l){return(
+                <p key={l[0]} className="flink" onClick={function(){nav2(l[0]);}} style={{fontSize:13.5,color:C.td,margin:'0 0 9px',cursor:'pointer'}}>{l[1]}</p>);})}
+            </div>
+            <div>
+              <p className="mono" style={{fontSize:11,color:C.tf,textTransform:'uppercase',letterSpacing:'0.1em',marginBottom:12}}>Practica</p>
+              {[['explorer','Explorador'],['calc','Calculadora'],['portafolio','Portafolio'],['simulador','Simulador']].map(function(l){return(
+                <p key={l[0]} className="flink" onClick={function(){nav2(l[0]);}} style={{fontSize:13.5,color:C.td,margin:'0 0 9px',cursor:'pointer'}}>{l[1]}</p>);})}
+            </div>
+            <div>
+              <p className="mono" style={{fontSize:11,color:C.tf,textTransform:'uppercase',letterSpacing:'0.1em',marginBottom:12}}>Datos</p>
+              <p style={{fontSize:13.5,color:C.td,margin:'0 0 9px'}}>Precios en vivo: Finnhub</p>
+              <p style={{fontSize:13.5,color:C.td,margin:'0 0 9px'}}>Históricos: Alpha Vantage</p>
+              <p style={{fontSize:13.5,color:C.td,margin:0}}>Sin cuentas, sin rastreo</p>
+            </div>
+          </div>
+          <div style={{display:'flex',gap:12,alignItems:'flex-start',paddingTop:20}}>
+            <span style={{fontSize:15,flexShrink:0}}>🛡️</span>
+            <p style={{fontSize:12.5,color:C.tf,lineHeight:1.6,margin:0}}>{t.disclaimer}</p>
+          </div>
+          <p className="mono" style={{fontSize:11,color:C.tf,margin:'14px 0 0',opacity:0.7}}>© 2026 Mi Cimiento</p>
         </div>
       </footer>
     </div>
