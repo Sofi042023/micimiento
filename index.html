@@ -621,13 +621,13 @@ function Checklist(props){
   },[autoTicker]);
 
   function doFetch(t){
-    var DK='d8ul8apr01qrt65sjsvgd8ul8apr01qrt65sjt00';
+    var DK='proxy';
     var OLD='d8rik39r01qnkitnbb8g';
     var stored=localStorage.getItem('mc_finnhub_key');
     if(!stored||stored===OLD){localStorage.setItem('mc_finnhub_key',DK);stored=DK;}
     var key=stored;
     setLoading(true);setCkData(null);setCkErr('');setSym(t);
-    var base='https://finnhub.io/api/v1';
+    var base='https://micimiento-finnhub.reygarciaarias79.workers.dev/api/v1';
     function safe(p){return p.catch(function(){return null;});}
     Promise.all([
       safe(fetch(base+'/quote?symbol='+t+'&token='+key).then(function(r){return r.json();})),
@@ -1000,7 +1000,7 @@ function Explorer({goTo,onAnalyze}){
   const [err,setErr]=useState(null);
   const [res,setRes]=useState(null);
   const [dbg,setDbg]=useState('');
-  const [avKey,setAvKey]=useState(()=>{var dk='d8ul8apr01qrt65sjsvgd8ul8apr01qrt65sjt00';var old='d8rik39r01qnkitnbb8g';var k=localStorage.getItem('mc_finnhub_key');if(!k||k===old){localStorage.setItem('mc_finnhub_key',dk);k=dk;}return k;});
+  const [avKey,setAvKey]=useState(()=>{var dk='proxy';var old='d8rik39r01qnkitnbb8g';var k=localStorage.getItem('mc_finnhub_key');if(!k||k===old){localStorage.setItem('mc_finnhub_key',dk);k=dk;}return k;});
   const [keyDraft,setKeyDraft]=useState('');
   const [inWl,setInWl]=useState(false);
   const cache=useRef({});
@@ -1039,7 +1039,7 @@ function Explorer({goTo,onAnalyze}){
     if(cache.current[k]){setRes(cache.current[k]);setErr(null);setDbg('');return;}
     setLoading(true);setErr(null);setRes(null);setDbg('Obteniendo datos...');
 
-    var FH='https://finnhub.io/api/v1';
+    var FH='https://micimiento-finnhub.reygarciaarias79.workers.dev/api/v1';
     var KEY=avKey;
 
     // ── RUTA CRIPTO ──
@@ -1438,7 +1438,7 @@ function Explorer({goTo,onAnalyze}){
           <p style={{fontSize:12,color:C.tf,margin:'0 0 14px'}}>Sin límite diario · 60 búsquedas/minuto · Sin tarjeta de crédito</p>
           <p style={{fontSize:13,color:C.td,lineHeight:1.7,margin:'0 0 16px'}}>
             <strong style={{color:C.t}}>Paso 1:</strong> Abre{' '}
-            <a href="https://finnhub.io/register" target="_blank" rel="noopener noreferrer" style={{color:C.blue,fontWeight:600}}>finnhub.io/register</a>
+            <a href="https://micimiento-finnhub.reygarciaarias79.workers.dev/register" target="_blank" rel="noopener noreferrer" style={{color:C.blue,fontWeight:600}}>finnhub.io/register</a>
             {' '}→ ingresa tu email → copia la clave que aparece en el dashboard.<br/>
             <strong style={{color:C.t}}>Paso 2:</strong> Pégala abajo y pulsa <strong style={{color:C.mint}}>Activar →</strong>
           </p>
@@ -1974,7 +1974,7 @@ function Watchlist(){
     var KEY=localStorage.getItem('mc_finnhub_key');
     if(!KEY)return;
     setFetching(true);
-    var FH='https://finnhub.io/api/v1';
+    var FH='https://micimiento-finnhub.reygarciaarias79.workers.dev/api/v1';
     var results={};
     var promises=wl.map(function(item){
       if(item.isCrypto){
@@ -2296,7 +2296,7 @@ function Simulator(){
   useEffect(()=>{localStorage.setItem('mc_sim_hist',JSON.stringify(history));},[history]);
 
   const getKey=()=>{
-    const dk='d8ul8apr01qrt65sjsvgd8ul8apr01qrt65sjt00';
+    const dk='proxy';
     const old='d8rik39r01qnkitnbb8g';
     let k=localStorage.getItem('mc_finnhub_key');
     if(!k||k===old){localStorage.setItem('mc_finnhub_key',dk);k=dk;}
@@ -2307,7 +2307,7 @@ function Simulator(){
     if(!ticker)return;
     setFetching(true);setErr('');setPrice(null);
     try{
-      const r=await fetch(`https://finnhub.io/api/v1/quote?symbol=${ticker.toUpperCase()}&token=${getKey()}`);
+      const r=await fetch(`https://micimiento-finnhub.reygarciaarias79.workers.dev/api/v1/quote?symbol=${ticker.toUpperCase()}&token=${getKey()}`);
       const d=await r.json();
       if(d.c&&d.c>0){setPrice(d.c);}
       else{setErr('Ticker no encontrado o mercado cerrado');}
@@ -2321,7 +2321,7 @@ function Simulator(){
     const np={};
     for(const pos of positions){
       try{
-        const r=await fetch(`https://finnhub.io/api/v1/quote?symbol=${pos.ticker}&token=${getKey()}`);
+        const r=await fetch(`https://micimiento-finnhub.reygarciaarias79.workers.dev/api/v1/quote?symbol=${pos.ticker}&token=${getKey()}`);
         const d=await r.json();
         if(d.c>0)np[pos.ticker]=d.c;
       }catch(e){}
